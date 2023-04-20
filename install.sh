@@ -1,4 +1,4 @@
-#!/bin/bash
+# !/bin/bash
 
 # Add SSH keys
 sudo echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDIpFS9mh1qIHa9trTjB9vQ/Oobh+drqx/k9a9ydW7fGy0ERE/YlC3SQvlRSurGuPULC+wc/x5dIVxBgkUQNDpNwdS2rXxPc55lCV5kpvUhaIyCsRlqLf+jby1JEPFzUsQbjPRl4ggR1eXyKwRG46wx0dRiwCdMgPVMdfNy7ckeYFQDkIAhZL5dWHQBTfr/ZWC8oTgGZ4hDEJHCDOTXY5HdM1M1DwX3EggrFM+zD8b/IO6Z+be4mbqDcA0rQl4GgBcggLz9fAf12kQiNw6ewVLSFlZsazphV8qonHUGpkxMpaKD1J+PhJNUxXoAsjCbvKlngIt28MaHppwQoXclG6AszpKQJJahrbZkupW0kOEKbJPUAmZt0KiJq0XZD6rhZqcFDo1V4e/3nlfDaXv/mee0+LIAprbiQEowB6YC1RZYvFlMZz1rgmZsIJieygGWB4J0xrvS2uBw++8peuninL2ZP+ORsm9yiFaKBgwZlqJ/NOWMZns+K9VlPIaSQS4ci+0= whetu@DESKTOP-NVTCV4R" >> /home/debian/.ssh/authorized_keys
@@ -23,9 +23,3 @@ sudo apt install fail2ban -y
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 sudo sed -i 's/=\ ssh/=\ 8572/g' /etc/fail2ban/jail.local
 sudo service fail2ban restart
-
-# Install AWS CLI
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/home/debian/awscliv2.zip"
-unzip /home/debian/awscliv2.zip
-sudo /home/debian/aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
-sudo rm -rf /home/debian/aws*
