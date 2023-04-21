@@ -19,7 +19,7 @@ sudo ufw allow 8572
 sudo ufw --force enable
 
 # Install and configure fail2ban
-sudo apt install fail2ban -y
+sudo apt -yqq install fail2ban
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 sudo sed -i 's/=\ ssh/=\ 8572/g' /etc/fail2ban/jail.local
 sudo service fail2ban restart
