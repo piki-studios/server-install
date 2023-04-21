@@ -14,7 +14,7 @@ sudo sed -i 's/#PermitRootLogin\ prohibit-password/PermitRootLogin\ no/g' /etc/s
 sudo systemctl restart sshd
 
 # Install and configure UFW
-sudo apt -y install ufw
+sudo apt -yqq install ufw
 sudo ufw allow 8572
 sudo ufw --force enable
 
